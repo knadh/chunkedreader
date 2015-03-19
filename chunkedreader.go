@@ -50,7 +50,7 @@ func (c *ChunkedReader) split(data []byte, atEOF bool) (advance int, token []byt
 	}
 
 	// Read a fixed size.
-	if len(data) > c.length {
+	if len(data) >= c.length {
 		return c.length, data[0:c.length], nil
 	}
 
